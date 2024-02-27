@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escribe tu pregunta</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+ <div id="chat_form">
+      <h1>Preguntar</h1>
+      <div id="chat-messages"> </div>
+        <form id="chat-messages" action="/api/messages" method="POST">
+       <label for="usuario">Nombre del usuario:</label><br />
+      <input type="text" id="usuario" name="usuario" /><br /> 
+      <label for="mensaje">Escribe tu pregunta:</label><br />
+      <input type="text" id="mensaje" name="mensaje" /><br /> 
+        <button type="submit">Enviar</button>
+        </form>
+      </div>
+
+     
+</body>
+</html>
+
+<script type="text/javascript">
+  const formQuestions = document.querySelector('#chat-messages')
+  const formData = new FormData(formQuestions)
+
+  formQuestions.addEventListener('submit', event => {
+  
+
+    let result = await messageModel.create({username, message})
+    res.send({ result: "success", payload: result })
+})
+    
+</script>

@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+ <ul>
+        {{#each products}}
+            <li>{{this.name}} - {{this.price}}</li>
+        {{/each}}
+    </ul>
+
+   <form id="agregar-form" action="/api/carts" method="POST">
+    <label for="product">Nombre del producto:</label><br />
+    <input type="text" id="product" name="product" /><br />
+    <label for="id">Id del producto:</label><br />
+    <input type="text" id="id" name="id" /><br />
+
+    <label for="quantity">Cantidad:</label><br />
+    <input type="text" id="quantity" name="quantity" /><br />
+
+    <input type="submit" name="submit" value="Agregar producto" />
+</form>
+</body>
+</html>
+
